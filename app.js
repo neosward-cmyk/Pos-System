@@ -106,6 +106,13 @@ list.innerHTML += `
 
 <br>
 
+Kod:
+${p.barcode || "-"}
+
+
+
+<br>
+
 RM ${p.price.toFixed(2)}
 
 <br>
