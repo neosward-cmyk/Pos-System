@@ -179,16 +179,22 @@ return;
 
 
 
+let barcode =
+document.getElementById("barcode").value;
+
+
+
 products.push({
 
 id:Date.now(),
+
+barcode,
 
 name,
 
 price,
 
 stock
-
 
 });
 
