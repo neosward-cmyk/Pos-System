@@ -75,9 +75,19 @@ let list =
 document.getElementById("productList");
 
 
+if(!list) return;
+
+
+
+let searchBox =
+document.getElementById("search");
+
+
 let search =
-document.getElementById("search").value
-.toLowerCase();
+searchBox ?
+searchBox.value.toLowerCase()
+:
+"";
 
 
 
@@ -87,37 +97,66 @@ list.innerHTML="";
 
 products
 .filter(p=>
+
 p.name.toLowerCase()
 .includes(search)
+
 )
+
 
 .forEach((p,index)=>{
 
 
 list.innerHTML += `
 
+
 <div class="product">
 
 
 <div>
 
+
 <b>${p.name}</b>
 
+
 <br>
+
 
 Kod:
 ${p.barcode || "-"}
 
 
-
 <br>
 
+
+Harga:
 RM ${p.price.toFixed(2)}
 
+
 <br>
+
 
 Stok:
 ${p.stock}
+
+
+<br>
+
+
+Modal:
+RM ${
+p.cost ? p.cost.toFixed(2) : "0.00"
+}
+
+
+<br>
+
+
+Untung:
+RM ${
+p.cost ? (p.price-p.cost).toFixed(2) : "0.00"
+}
+
 
 </div>
 
@@ -136,22 +175,9 @@ ${p.stock}
 `;
 
 
-
 });
 
 
-}
-
-
-RM Modal:
-${p.cost ? p.cost.toFixed(2) : "0"}
-
-<br>
-
-Untung:
-RM ${
-(p.price-p.cost)
-.toFixed(2)
 }
 
 
@@ -741,14 +767,20 @@ updateSales();
 function updateSales(){
 
 
-document.getElementById("todaySales")
-.innerHTML=
+let salesBox =
+document.getElementById("todaySales");
+
+
+if(!salesBox) return;
+
+
+
+salesBox.innerHTML =
 "RM "+
 sales.toFixed(2);
 
 
 }
-
 
 
 
