@@ -199,7 +199,7 @@ return;
 
 
 let barcode =
-document.getElementById("barcode").value;
+document.getElementById("productBarcode").value;
 
 
 
