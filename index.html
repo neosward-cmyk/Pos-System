@@ -135,8 +135,20 @@ onkeyup="displayProducts()">
 
 <input
 id="barcode"
-placeholder="🔢 Barcode">
+placeholder="🔢 Barcode Produk"
+onkeyup="searchBarcode()">
 
+
+<button onclick="startScanner()">
+
+📷 Scan Barcode
+
+</button>
+
+
+<div id="scanner">
+
+</div>
 
 </div>
 
@@ -332,7 +344,9 @@ onclick="checkout()">
 </main>
 
 
+<script src="https://unpkg.com/html5-qrcode"></script>
 
+<script src="barcode.js"></script>
 
 
 <script src="app.js"></script>
