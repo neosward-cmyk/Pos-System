@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>POS Kedai Runcit</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🛒 POS Kedai Runcit</h1>
+
+<div>
+Jualan Hari Ini:
+<b id="todaySales">RM0.00</b>
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<section class="products">
+
+
+<h2>Produk</h2>
+
+
+<input 
+id="search"
+placeholder="Cari produk..."
+onkeyup="displayProducts()">
+
+
+
+<div id="productList"></div>
+
+
+
+<h3>Tambah Produk</h3>
+
+
+<input id="pname" placeholder="Nama Produk">
+
+<input id="price" 
+type="number"
+placeholder="Harga">
+
+
+<input id="stock"
+type="number"
+placeholder="Stok">
+
+
+<button onclick="addProduct()">
+Tambah
+</button>
+
+
+
+</section>
+
+
+
+
+
+<section class="cart">
+
+
+<h2>🛒 Cart</h2>
+
+
+<div id="cartList">
+
+</div>
+
+
+<h3>
+Jumlah:
+RM<span id="total">0</span>
+
+</h3>
+
+
+<button class="checkout"
+onclick="checkout()">
+
+Checkout
+
+</button>
+
+
+
+</section>
+
+
+</div>
+
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
