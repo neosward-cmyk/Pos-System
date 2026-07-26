@@ -633,24 +633,41 @@ JSON.stringify(history)
 
 
 
-alert(
+let invoice =
+"INV-" +
+Date.now();
 
-`
-TERIMA KASIH
 
-Jumlah:
-RM ${total.toFixed(2)}
 
-Bayar:
-RM ${payment.toFixed(2)}
+localStorage.setItem(
+"lastReceipt",
 
-Baki:
-RM ${balance.toFixed(2)}
+JSON.stringify({
 
-`
+invoice,
+
+date:
+new Date()
+.toLocaleString(),
+
+items:cart,
+
+total,
+
+payment,
+
+balance
+
+
+})
 
 );
 
+
+
+
+window.location.href=
+"receipt.html";
 
 
 
