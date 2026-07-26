@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Pengurusan Produk</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="top-header">
+
+<div class="brand">
+
+<h1>
+📦 Pengurusan Produk
+</h1>
+
+<p>
+Tambah dan urus produk kedai
+</p>
+
+</div>
+
+</header>
+
+
+
+<nav>
+
+<button onclick="location.href='index.html'">
+🛒 Cashier
+</button>
+
+
+<button onclick="location.href='dashboard.html'">
+📊 Dashboard
+</button>
+
+</nav>
+
+
+
+
+<div class="container">
+
+
+<section class="products">
+
+
+<h2>
+➕ Tambah Produk Baru
+</h2>
+
+
+
+<input
+id="productBarcode"
+placeholder="Barcode Produk">
+
+
+<input
+id="pname"
+placeholder="Nama Produk">
+
+
+<input
+id="price"
+type="number"
+placeholder="Harga Jual RM">
+
+
+<input
+id="cost"
+type="number"
+placeholder="Harga Modal RM">
+
+
+<input
+id="stock"
+type="number"
+placeholder="Stok">
+
+
+<input
+id="category"
+placeholder="Kategori">
+
+
+<input
+id="supplier"
+placeholder="Supplier">
+
+
+
+
+<button onclick="addProduct()">
+
+💾 Simpan Produk
+
+</button>
+
+
+
+</section>
+
+
+
+<section class="products">
+
+
+<h2>
+📦 Senarai Produk
+</h2>
+
+
+<div id="productList">
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
