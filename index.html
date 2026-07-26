@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>POS Kedai Runcit</title>
@@ -18,29 +19,65 @@
 
 <header>
 
-<h1>🛒 POS Kedai Runcit</h1>
-
 <div>
-Jualan Hari Ini:
-<b id="todaySales">RM0.00</b>
+<h1>🛒 POS Kedai Runcit</h1>
+<p>Sistem Jualan Harian</p>
 </div>
+
+
+<div class="sales-box">
+
+Jualan Hari Ini
+
+<br>
+
+<b id="todaySales">
+RM0.00
+</b>
+
+</div>
+
 
 </header>
 
 
 
-<div class="container">
+<nav>
+
+<button>
+🏠 Dashboard
+</button>
+
+<button>
+📦 Produk
+</button>
+
+<button>
+🧾 Jualan
+</button>
+
+<button>
+📊 Laporan
+</button>
+
+</nav>
+
+
+
+
+<main class="container">
+
 
 
 <section class="products">
 
 
-<h2>Produk</h2>
+<h2>📦 Senarai Produk</h2>
 
 
 <input 
 id="search"
-placeholder="Cari produk..."
+placeholder="🔍 Cari produk..."
 onkeyup="displayProducts()">
 
 
@@ -49,28 +86,45 @@ onkeyup="displayProducts()">
 
 
 
-<h3>Tambah Produk</h3>
+
+<div class="add-product">
 
 
-<input id="pname" placeholder="Nama Produk">
+<h3>
+➕ Tambah Produk
+</h3>
 
-<input id="price" 
+
+<input 
+id="pname"
+placeholder="Nama Produk">
+
+
+<input 
+id="price"
 type="number"
-placeholder="Harga">
+placeholder="Harga RM">
 
 
-<input id="stock"
+<input 
+id="stock"
 type="number"
-placeholder="Stok">
+placeholder="Jumlah Stok">
 
 
 <button onclick="addProduct()">
-Tambah
+
+Simpan Produk
+
 </button>
+
+
+</div>
 
 
 
 </section>
+
 
 
 
@@ -79,7 +133,21 @@ Tambah
 <section class="cart">
 
 
-<h2>🛒 Cart</h2>
+<h2>
+🛒 Cart Jualan
+</h2>
+
+
+<div class="cart-info">
+
+Jumlah Item:
+<span id="itemCount">
+0
+</span>
+
+
+</div>
+
 
 
 <div id="cartList">
@@ -87,30 +155,50 @@ Tambah
 </div>
 
 
+
+
+<div class="summary">
+
+
 <h3>
+
 Jumlah:
-RM<span id="total">0</span>
+
+RM <span id="total">
+0.00
+</span>
 
 </h3>
 
 
-<button class="checkout"
+
+<button 
+class="checkout"
 onclick="checkout()">
 
-Checkout
+💳 Checkout
 
 </button>
 
-
-
-</section>
 
 
 </div>
 
 
 
+</section>
+
+
+
+
+</main>
+
+
+
+
+
 <script src="app.js"></script>
+
 
 </body>
 
