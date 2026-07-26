@@ -96,7 +96,6 @@ p.name.toLowerCase()
 
 list.innerHTML += `
 
-
 <div class="product">
 
 
