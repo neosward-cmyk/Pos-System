@@ -144,6 +144,18 @@ ${p.stock}
 }
 
 
+RM Modal:
+${p.cost ? p.cost.toFixed(2) : "0"}
+
+<br>
+
+Untung:
+RM ${
+(p.price-p.cost)
+.toFixed(2)
+}
+
+
 
 
 
@@ -191,6 +203,21 @@ document.getElementById("barcode").value;
 
 
 
+let cost =
+Number(
+document.getElementById("cost").value
+);
+
+
+let category =
+document.getElementById("category").value;
+
+
+let supplier =
+document.getElementById("supplier").value;
+
+
+
 products.push({
 
 id:Date.now(),
@@ -201,10 +228,16 @@ name,
 
 price,
 
+cost,
+
+category,
+
+supplier,
+
 stock
 
-});
 
+});
 
 
 saveProducts();
