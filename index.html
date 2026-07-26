@@ -17,50 +17,92 @@
 <body>
 
 
-<header>
+<header class="top-header">
 
-<div>
+
+<div class="brand">
+
 <h1>🛒 POS Kedai Runcit</h1>
-<p>Sistem Jualan Harian</p>
+
+<p>
+Sistem Pengurusan Jualan
+</p>
+
 </div>
 
 
+
+<div class="status">
+
+<span id="clock">
+00:00:00
+</span>
+
+<br>
+
+<span class="online">
+🟢 Sistem Aktif
+</span>
+
+
+</div>
+
+
+
+
 <div class="sales-box">
+
 
 Jualan Hari Ini
 
 <br>
 
-<b id="todaySales">
+<strong id="todaySales">
 RM0.00
-</b>
+</strong>
+
 
 </div>
+
 
 
 </header>
 
 
 
+
+
 <nav>
+
 
 <button>
 🏠 Dashboard
 </button>
 
+
 <button>
 📦 Produk
 </button>
 
+
 <button>
-🧾 Jualan
+🧾 Transaksi
 </button>
+
 
 <button>
 📊 Laporan
 </button>
 
+
+<button>
+⚙ Tetapan
+</button>
+
+
 </nav>
+
+
 
 
 
@@ -69,20 +111,45 @@ RM0.00
 
 
 
+
+
 <section class="products">
 
 
-<h2>📦 Senarai Produk</h2>
+
+<h2>
+📦 Produk
+</h2>
 
 
-<input 
+
+<div class="search-area">
+
+
+<input
 id="search"
 placeholder="🔍 Cari produk..."
 onkeyup="displayProducts()">
 
 
 
-<div id="productList"></div>
+<input
+id="barcode"
+placeholder="🔢 Barcode">
+
+
+</div>
+
+
+
+
+<div id="productList">
+
+</div>
+
+
+
+
 
 
 
@@ -91,8 +158,9 @@ onkeyup="displayProducts()">
 
 
 <h3>
-➕ Tambah Produk
+➕ Tambah Produk Baru
 </h3>
+
 
 
 <input 
@@ -100,30 +168,38 @@ id="pname"
 placeholder="Nama Produk">
 
 
-<input 
+
+<input
 id="price"
 type="number"
 placeholder="Harga RM">
 
 
-<input 
+
+<input
 id="stock"
 type="number"
-placeholder="Jumlah Stok">
+placeholder="Stok">
+
 
 
 <button onclick="addProduct()">
 
-Simpan Produk
+💾 Simpan Produk
 
 </button>
+
 
 
 </div>
 
 
 
+
 </section>
+
+
+
 
 
 
@@ -133,42 +209,98 @@ Simpan Produk
 <section class="cart">
 
 
+
 <h2>
-🛒 Cart Jualan
+🛒 Jualan
 </h2>
+
+
+
+<div class="customer">
+
+
+<input
+placeholder="Nama Pelanggan (optional)"
+id="customer">
+
+
+</div>
+
+
+
 
 
 <div class="cart-info">
 
+
 Jumlah Item:
-<span id="itemCount">
+
+<b id="itemCount">
 0
-</span>
+</b>
+
 
 
 </div>
+
+
 
 
 
 <div id="cartList">
 
+
 </div>
 
 
 
 
-<div class="summary">
+
+
+
+
+<div class="payment">
 
 
 <h3>
+Jumlah Bayaran
+</h3>
 
-Jumlah:
 
-RM <span id="total">
+
+<h2>
+
+RM 
+<span id="total">
 0.00
 </span>
 
-</h3>
+
+</h2>
+
+
+
+<select id="paymentMethod">
+
+<option>
+Tunai
+</option>
+
+<option>
+DuitNow QR
+</option>
+
+<option>
+Kad
+</option>
+
+<option>
+E-Wallet
+</option>
+
+
+</select>
+
 
 
 
@@ -176,7 +308,9 @@ RM <span id="total">
 class="checkout"
 onclick="checkout()">
 
-💳 Checkout
+
+🧾 Bayar & Cetak Resit
+
 
 </button>
 
@@ -186,7 +320,11 @@ onclick="checkout()">
 
 
 
+
 </section>
+
+
+
 
 
 
@@ -200,6 +338,34 @@ onclick="checkout()">
 <script src="app.js"></script>
 
 
+<script>
+
+
+function updateClock(){
+
+
+let now=new Date();
+
+
+document.getElementById("clock")
+.innerHTML=
+now.toLocaleTimeString();
+
+
+}
+
+
+setInterval(updateClock,1000);
+
+
+updateClock();
+
+
+</script>
+
+
+
 </body>
+
 
 </html>
